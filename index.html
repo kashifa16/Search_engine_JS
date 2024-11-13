@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Search Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+DE+Grund:wght@100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: "Merriweather", serif;
+            font-weight: 600;
+            background-color: rgba(238, 235, 200, 0.884);
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .nav-bar li:hover {
+            cursor: pointer;
+            color: peru;
+            transition: 0.8s;
+        }
+      
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            margin: 25px;
+            gap: 15px;
+        }
+
+        .list-item li {
+            list-style: none;
+            color: rgb(10, 10, 10);
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        h1 {
+            padding: 15px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+            margin: auto;
+            width: fit-content;
+        }
+
+        .search-box input {
+            padding: 5px;
+            border-radius: 5px;
+            outline: none;
+            width: 350px;
+            height: 35px;
+        }
+
+        input::placeholder {
+            font-size: 18px;
+        }
+
+        .search-result {
+            margin-top: 10px;
+        }
+
+        #itemList li {
+            list-style: none;
+            text-align: center;
+            background-color: white;
+        }
+
+        #itemList li p {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        #itemList {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            padding: 10px;
+            margin-top: 5%;
+        }
+
+        #itemList img {
+            width: 250px;
+            height: 250px;
+            padding: 5px;
+        }
+
+        .aboutus {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .aboutus span {
+            color: peru;
+        }
+
+        .content {
+            margin-top: 12%;
+            padding: 5px;
+        }
+
+        .content p {
+            line-height: 30px;
+
+        }
+        #searchResult{
+            margin-top: -5%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div> <img src="logo palmshore.png" alt=""></div>
+        <ul class="list-item">
+            <li>Home</li>
+            <li>Menu</li>
+            <li>About Us</li>
+            <li>Gallery</li>
+            <li>Contact Us</li>
+        </ul>
+
+    </nav>
+    <div class="aboutus">
+        <div class="content">
+            <h1> About our <span>Food Quality</span></h1>
+            <p>At our restaurant, we are dedicated to delivering the finest quality in every dish. We use only the
+                freshest, locally sourced ingredients to ensure authentic flavors, prepared with care by our expert
+                chefs. With strict hygiene standards and a commitment to ethical sourcing, we create meals that are not
+                only delicious but also responsibly crafted for an unforgettable dining experience.</p>
+
+        </div>
+        <img src="about (1).png" alt="">
+    </div>
+    <h1>EXPLORE OUR MENU</h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search here..." onkeyup="search()">
+    </div>
+
+    <ul id="itemList">
+        <li><img src="food (1)" alt="">
+            <p>Chicken Lollipop</p>
+        </li>
+        <li><img src="food (2).jpeg" alt="">
+            <p>Fried Rice</p>
+        </li>
+        <li><img src="food (3).jpeg" alt="">
+            <p>Paneer Butter Masala</p>
+        </li>
+        <li><img src="food (4).jpeg" alt="">
+            <p>BBQ Mutton</p>
+        </li>
+        <li><img src="food (5).jpeg" alt="">
+            <p>Veg Salad</p>
+        </li>
+        <li><img src="food (6).jpeg" alt="">
+            <p>Spagetti</p>
+        </li>
+        <li><img src="food (7).jpeg" alt="">
+            <p>Salad with Masala</p>
+        </li>
+        <li><img src="food (8).jpeg" alt="">
+            <p>Veg Cheese burger</p>
+        </li>
+        <li><img src="food (9).jpeg" alt="">
+            <p>Chicken Shawarma</p>
+        </li>
+        <li><img src="food (10).jpeg" alt="">
+            <p>Sushi</p>
+        </li>
+        <li><img src="food (11).jpeg" alt="">
+            <p>Chicken Gravy</p>
+        </li>
+        <li><img src="food (13).jpeg" alt="">
+            <p>Tacoos with Veggies</p>
+        </li>
+        <li><img src="food (14).jpeg" alt="">
+            <p>White Pasta</p>
+        </li>
+        <li><img src="food (12).jpeg" alt="">
+            <p>Prawn with Sauce</p>
+        </li>
+        <li><img src="food (15).jpeg" alt="">
+            <p>Veg Pizza</p>
+        </li>
+    </ul>
+
+    <p class="search-result" id="searchResult"></p>
+
+    <script>
+        function search() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.getElementById('itemList').getElementsByTagName('li');
+            let found = false;
+
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i].innerHTML.toLowerCase();
+                if (item.includes(input)) {
+                    items[i].style.display = "";
+                    found = true;
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+
+            const resultText = found ? "" : "No results found.";
+            document.getElementById('searchResult').innerText = resultText;
+          
+        }
+    </script>
+
+</body>
+
+</html>
